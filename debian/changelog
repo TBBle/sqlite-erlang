@@ -1,0 +1,5 @@
+sqlite-erlang (1.0.0-1) unstable; urgency=low
+
+  * Package mwpark's branch of sqlite-erlang with a fix from benbro
+
+ -- Paul Hampson <paulh@microforte.com>  Fri, 09 Oct 2009 18:20:59 +1100

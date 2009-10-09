@@ -1,0 +1,14 @@
+Source: sqlite-erlang
+Section: interpreters
+Priority: extra
+Maintainer: Paul Hampson <paulh@microforte.com>
+Build-Depends: debhelper (>= 7), erlang-nox, erlang-dev (>= 1:11.b.4-4), libsqlite3-dev
+Standards-Version: 3.8.0
+Homepage: http://github.com/mwpark/sqlite-erlang
+
+Package: erlang-sqlite
+Architecture: any
+Depends: ${erlang-nox:Depends}, ${erlang-abi:Depends}, ${shlibs:Depends}, ${misc:Depends}
+Description: Erlang/OTP binding to sqlite
+ The sqlite port provides a port for accessing an
+ sqlite3 database from an erlang application
