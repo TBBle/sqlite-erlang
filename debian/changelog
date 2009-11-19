@@ -1,3 +1,9 @@
+sqlite-erlang (1.0.1-0) unstable; urgency=low
+
+  * New upstream release with corrected string quoting
+
+ -- Paul Hampson <paulh@microforte.com>  Thu, 19 Nov 2009 14:13:14 +1100
+
 sqlite-erlang (1.0.0-1) unstable; urgency=low
 
   * Package mwpark's branch of sqlite-erlang with a fix from benbro
