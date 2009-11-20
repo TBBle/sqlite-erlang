@@ -28,9 +28,9 @@ quote(X) when is_list(X) ->
   ]));
 quote(X) -> lists:flatten(io_lib:format("'~s'", [X])).
 
-quote_quotes([$'|Rest], Acc) -> quote_quotes(Rest, Acc ++ "''");
-quote_quotes([C|Rest], Acc) -> quote_quotes(Rest, Acc ++ [C]);
-quote_quotes([], Acc) -> Acc.
+quote_quotes([$'|Rest], Acc) -> quote_quotes(Rest, ["''"|Acc]);
+quote_quotes([C|Rest], Acc) -> quote_quotes(Rest, [C|Acc]);
+quote_quotes([], Acc) -> lists:reverse(Acc).
 
 %%--------------------------------------------------------------------
 %% @spec col_type(Type :: term()) -> term()
@@ -155,6 +155,7 @@ drop_table(Tbl) ->
 %% Internal functions
 %%====================================================================
 
+-ifndef(NOTEST).
 %%%-------------------------------------------------------------------
 %%% Tests
 %%%-------------------------------------------------------------------
@@ -165,3 +166,4 @@ quote_test() ->
   ?assertEqual("'quoteme'", quote("quoteme")),
   ?assertEqual("'quoteme'''' fr''ed'", quote(<<"quoteme'' fr'ed">>)),
   ?assertEqual("'quoteme'''' fr''ed'", quote("quoteme'' fr'ed")).
+-endif.
